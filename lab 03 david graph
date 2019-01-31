@@ -1,0 +1,5 @@
+Lab 03
+```{r}
+ggplot(data = cdc, mapping = aes(x = age)) +
+geom_bar()
+```

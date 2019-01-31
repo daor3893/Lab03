@@ -4,20 +4,36 @@ author: "David Orozco"
 date: "January 30, 2019"
 output: html_document
 ---
-
 ```{r}
-ggplot(data = cdc, mapping = aes(x = age))+
-  geom_histogram(color = "red" , fill = "white",binwidth = 2) +
-  geom_freqpoly(color = "black", size = 1,binwidth = 2) +
-  
-facet_grid(genhlth ~ smoke100)
-  
+library(tidyverse)
+source("http://www.openintro.org/stat/data/cdc.R")
+cdc <- as_tibble(cdc)
 
 ```
+```{r}
+ggplot(data = cdc, mapping = aes(x = age))+
+  geom_density(color = "black") +
+  
+facet_grid(genhlth ~ smoke100)
+```
+
+C:\Users\Dav of the ids\Documents\STAT 2600\Lab03\Ethan Health Bar Graph.jpeg
+
 
 ```{r}
 library(tidyverse)
 ggplot(data = cdc, mapping = aes(x = age, y = exerany, color = genhlth)) +
   geom_smooth(se = FALSE) +
   ggtitle("General Health and Exercise vs. Age")
+```
+```{r ggplot, echo = FALSE, message = FALSE}
+
+ggplot(data = cdc)+
+  geom_bar(mapping = aes(x = genhlth, fill = gender), color = "black", position = "dodge")+
+  xlab("General Health Condition")+
+  ylab("Number of People")+
+  ggtitle("General Health of Males vs. Females")+
+  theme(plot.title = element_text(hjust = .5))
+
+
 ```

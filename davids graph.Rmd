@@ -21,3 +21,12 @@ ggplot(data = cdc, mapping = aes(x = age, y = exerany, color = genhlth)) +
   geom_smooth(se = FALSE) +
   ggtitle("General Health and Exercise vs. Age")
 ```
+
+```{r}
+ggplot(data = cdc) +
+  geom_bar(mapping = aes(x = smoke100, fill = genhlth),position = "dodge")+
+  facet_grid(.~gender) +
+  ggtitle("General Health of Smokers vs. Nonsmokers") +
+  xlab("Smoke (1 = yes, 0 = no)")
+
+```

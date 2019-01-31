@@ -5,4 +5,4 @@ date: "1/30/2019"
 output: html_document
 ---
 
-![Ethan's Graph](images/Lab3BarGraph.JPG){width=250px}
+![Ethan's Graph](Ethan_Health_Bar_Graph.jpeg){width=250px}

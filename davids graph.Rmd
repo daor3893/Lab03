@@ -14,3 +14,10 @@ facet_grid(genhlth ~ smoke100)
   
 
 ```
+
+```{r}
+library(tidyverse)
+ggplot(data = cdc, mapping = aes(x = age, y = exerany, color = genhlth)) +
+  geom_smooth(se = FALSE) +
+  ggtitle("General Health and Exercise vs. Age")
+```

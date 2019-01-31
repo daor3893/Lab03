@@ -1,0 +1,16 @@
+---
+title: "david graph"
+author: "David Orozco"
+date: "January 30, 2019"
+output: html_document
+---
+
+```{r}
+ggplot(data = cdc, mapping = aes(x = age))+
+  geom_histogram(color = "red" , fill = "white",binwidth = 2) +
+  geom_freqpoly(color = "black", size = 1,binwidth = 2) +
+  
+facet_grid(genhlth ~ smoke100)
+  
+
+```

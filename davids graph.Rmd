@@ -1,31 +1,42 @@
 ---
-title: "david graph"
-author: "David Orozco"
+title: "Lab 03-Not Team One"
+author: "David Orozco, Anderson Mun, Arie de Valle, Ethan Schacht"
 date: "January 30, 2019"
 output: html_document
 ---
-```{r}
+****
+### Individual Component:
+*****
+#### David's Graph
+```{r,  echo = FALSE, message = FALSE}
 library(tidyverse)
 source("http://www.openintro.org/stat/data/cdc.R")
 cdc <- as_tibble(cdc)
 
 ```
-```{r}
+```{r,  echo = FALSE, message = FALSE}
 ggplot(data = cdc, mapping = aes(x = age))+
   geom_density(color = "black") +
-  
+  ggtitle("Health Distribution Based on Age") +
 facet_grid(genhlth ~ smoke100)
 ```
 
-C:\Users\Dav of the ids\Documents\STAT 2600\Lab03\Ethan Health Bar Graph.jpeg
+* The graph above shows the distribution of age depending on a two parameters.There parameters are general health classification and wether an individual smokes. The first column (labeled '0') are non-smokers and the second are smokers. Each box is the age distribution of people who meet the parameters in their location. 
 
+****
+#### Anderson's Graph
 
-```{r}
+```{r, echo = FALSE, message = FALSE}
 library(tidyverse)
 ggplot(data = cdc, mapping = aes(x = age, y = exerany, color = genhlth)) +
   geom_smooth(se = FALSE) +
   ggtitle("General Health and Exercise vs. Age")
 ```
+
+* Insert text about what the graph shows here
+
+****
+#### Arie's Graph
 ```{r ggplot, echo = FALSE, message = FALSE}
 
 ggplot(data = cdc)+
@@ -37,3 +48,23 @@ ggplot(data = cdc)+
 
 
 ```
+
+* Insert text about what the graph shows here
+
+****
+#### Ethan's Graph
+****
+### Team Component:
+*****
+#### Team Graph
+ 
+```{r,  echo = FALSE, message = FALSE} 
+ggplot(data = cdc) + 
+  geom_bar(mapping = aes(x = smoke100, fill = genhlth),position = "dodge")+ 
+  facet_grid(.~gender) + 
+  ggtitle("General Health of Smokers vs. Nonsmokers") + 
+  xlab("Smoke (1 = yes, 0 = no)") 
+ 
+```
+
+* Insert text about what the graph shows here

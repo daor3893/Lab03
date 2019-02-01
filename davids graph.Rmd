@@ -21,7 +21,7 @@ ggplot(data = cdc, mapping = aes(x = age))+
 facet_grid(genhlth ~ smoke100)
 ```
 
-* The graph above shows the distribution of age depending on a two parameters.There parameters are general health classification and wether an individual smokes. The first column (labeled '0') are non-smokers and the second are smokers. Each box is the age distribution of people who meet the parameters in their location. 
+* The graph above shows the distribution of age depending on a two parameters.There parameters are general health classification and whether an individual smokes. The first column (labeled '0') are non-smokers and the second are smokers. Each box is the age distribution of people who meet the parameters in their location. 
 
 ****
 #### Anderson's Graph
@@ -49,10 +49,21 @@ ggplot(data = cdc)+
 
 ```
 
-* Insert text about what the graph shows here
+* This graph compares the general health of females compared to males. Males and females are compared in each general health category: excellent, very good, fair, and poor. A bar graph, and the position doge, is used to display a vertical comparison between both sexes.
 
 ****
 #### Ethan's Graph
+```{r, echo = FALSE, message = FALSE}
+ggplot(data = cdc) +
+  geom_bar(mapping = aes(x = hlthplan, fill = genhlth), 
+           color = "black", position = "fill") +
+  xlab("Health Plan (0.0 = None, 1.0 = Yes)") +
+  ylab("Frequency in %") +
+  labs(fill = "General Health") +
+  ggtitle("General Health Freqencies Based on Health Plan")
+```
+ * This graph shows the distribution of general health based on the use of a health plan or lack of a health plan.  "0.0" represents no health plan and "1.0" represents the use of a health plan.  I made this bar graph into a proportional format rather than a raw frequency format so the viewer can more easily compare the colored sections of general health to see which strategy (health plan or no health plan) is most effective.
+ 
 ****
 ### Team Component:
 *****

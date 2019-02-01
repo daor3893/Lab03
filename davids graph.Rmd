@@ -22,6 +22,8 @@ facet_grid(genhlth ~ smoke100)
 ```
 
 * The graph above shows the distribution of age depending on a two parameters.There parameters are general health classification and whether an individual smokes. The first column (labeled '0') are non-smokers and the second are smokers. Each box is the age distribution of people who meet the parameters in their location. 
+* Findings: The graph shows that thet younger ( below 50 yrs) have higher concentration of pepole who are in good, very good, or exelent health. It also shows that there is a higher concentration of people who are in poor health that smoke than those who are in poor health and dont smoke. 
+* I used a geom_density to show the distribution of age. Then I used face_grid to make mulitple distributions of age based on both the smoking variable and the general health variable.
 
 ****
 #### Anderson's Graph
@@ -33,7 +35,11 @@ ggplot(data = cdc, mapping = aes(x = age, y = exerany, color = genhlth)) +
   ggtitle("General Health and Exercise vs. Age")
 ```
 
-* Insert text about what the graph shows here
+* This graph portrays the general health of all age groups while showing the amount of exercise each group does. I created a line graph with 5 separate lines showing the difference in health from those who are extremely healthy to those who have poor health. 
+* Findings: The trend we can see here is that healthier individuals exercise regularly, and those with poor health exercised only occasionally or not at all. 
+* In the plot above I used various amount of coding including ggplot. The graph started out originally with a geom_smooth containing three variable in the aesthetics. I added an se = false in order to keep my graph looking clean without the gray area of data. Finally the graph needed to have a ggtitle and color.  
+
+
 
 ****
 #### Arie's Graph
@@ -49,7 +55,11 @@ ggplot(data = cdc)+
 
 ```
 
-* This graph compares the general health of females compared to males. Males and females are compared in each general health category: excellent, very good, fair, and poor. A bar graph, and the position doge, is used to display a vertical comparison between both sexes.
+* This graph compares the general health of females compared to males. Males and females are compared in each general health category: excellent, very good, fair, and poor. A bar graph, and the position doge, is used to display a vertical comparison between both sexes. 
+* Findings: The general health condition of males and females are about the same in each category.
+* I created at plot using geom_bar. I set x = genhlth and fill = gender in the aesthetic. I used position = "dodge" to get rid of the default stack. I change the title of the x and y axis labels using xlab = General health condition, ylab = amount of people. I centered the title by using the theme function.
+
+
 
 ****
 #### Ethan's Graph
@@ -62,7 +72,10 @@ ggplot(data = cdc) +
   labs(fill = "General Health") +
   ggtitle("General Health Freqencies Based on Health Plan")
 ```
+
  * This graph shows the distribution of general health based on the use of a health plan or lack of a health plan.  "0.0" represents no health plan and "1.0" represents the use of a health plan.  I made this bar graph into a proportional format rather than a raw frequency format so the viewer can more easily compare the colored sections of general health to see which strategy (health plan or no health plan) is most effective.
+ * Findings: It illustrates that people without a health plan tend to have lower frequencies of excellent and very good health compared to those with a health plan, and people with a health plan tend to have lower frequencies of poor and fair health than those with no health plan.
+ * I used geom_bar to make a bar graph, used fill = genhlth in the aesthetics to generate the proportions, and also changed the labels and title using xlab, ylab, and ggtitle to make the graph more appealing to the reader.
  
 ****
 ### Team Component:
@@ -78,4 +91,36 @@ ggplot(data = cdc) +
  
 ```
 
-* Insert text about what the graph shows here
+##### Overall Questions
+
+* Is there a significant correlation in general health between men and women who smoke and don't smoke? Furthermore, could there be a sex-gene genetic predisposition to significant health problems due to smoking?
+
+##### Why They Are Important?
+
+* One could say these questions are interesting because they show how gender can play a role in how one is affected by smoking while trying to maintain a healthy lifestyle.  If we find a statistically significant correlation between smoking frequencies and general health, we can provide recommendations for each gender on what they can do to improve their health in regards to their smoking habits.
+
+##### Findings
+
+* Women are in better health condition when they don't smoke, compared to when they do smoke. 
+* The general health condition of men does not appear to be affected as much as women. 
+* For the males and females that do smoke, there still is a smaller amount of people with either fair, or poor health.  
+
+##### Conclusion / Recommendations
+
+* If you smoke, regardless of gender, you should limit your smoking frequencies as excellent health is much more common among non-smokers and poor health is much more common among smokers.  This strategy will be more effective, however, if you are a woman who wants excellent or very good health than a man who wants these same attributes.
+
+##### Work Allocation
+
+* Ethan: Made and interpreted proportional bar graph for general health based on health plan, wrote Conclusion / Recommendations section, added to why questions are important.
+
+* Arie: Made bar graph that compares the general health of males vs females, created the team graph, helped write overall question for team graph and findings for team graph.
+
+* Anderson: Made line graph comparing general health vs age and exercise, created team graph.
+
+* David: Uploaded R-markdown to GitHub and merged code in GitKraken, made graph that shows general age distribution, submited file to OSF.
+
+
+## FIN
+
+
+
